@@ -21,4 +21,5 @@ This fragment will shpw the webView of the selected article.
 
 # Search Fragment 
 In this fragment the user can search the news.
+
 <img src = "https://res.cloudinary.com/dixttklud/image/upload/v1674789714/NewsAppSS/Screenshot_20230126-110349_NewsApp_xqvvvs.jpg" width = 20% height = 20% >
