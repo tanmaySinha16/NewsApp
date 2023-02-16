@@ -31,18 +31,21 @@ In this fragment, the user can search for news.
 ### Installation
 To install NewsApp, follow these steps:
 
-Clone the repository to your local machine using git clone https://github.com/your-username/news-app.git.</br>
-Open the project in Android Studio.</br>
-Build and run the app on an emulator or physical device.</br>
+- Clone the repository to your local machine using git clone https://github.com/your-username/news-app.git.</br>
+- Open the project in Android Studio.</br>
+- Build and run the app on an emulator or physical device.</br>
+
 Note: NewsApp requires an internet connection to function properly.</br>
 
 ### Usage
 To use NewsApp, follow these steps:
 
-Launch the app.
-View the top headlines in the Breaking News Fragment.</br>
-Search for articles using the Search Fragment.</br>
-Click on an article to view it in the Article Fragment.</br>
-
+- Launch the app.
+- View the top headlines in the Breaking News Fragment.</br>
+- Search for articles using the Search Fragment.</br>
+- Click on an article to view it in the Article Fragment.</br>
+- Click on the like button to save the article.</br>
+- View the saved articles in "Saved News" screen.
+ 
 
 
