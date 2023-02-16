@@ -8,6 +8,7 @@ import android.net.ConnectivityManager.TYPE_WIFI
 import android.net.NetworkCapabilities.TRANSPORT_CELLULAR
 import android.net.NetworkCapabilities.TRANSPORT_WIFI
 import android.os.Build
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,15 +20,15 @@ import com.example.newsapp.ui.models.Article
 import com.example.newsapp.ui.models.NewsResponse
 import com.example.newsapp.ui.repository.NewsRepository
 import com.example.newsapp.ui.util.Resource
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.io.IOException
 
-class NewsViewModel(
-    app:Application,
-    val newsRepository: NewsRepository
-): AndroidViewModel(app) {
+
+class NewsViewModel @ViewModelInject constructor(
+    val newsRepository: NewsRepository,
+    application: Application
+): AndroidViewModel(application) {
 
     val breakingNews:MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     var breakingNewsPage = 1

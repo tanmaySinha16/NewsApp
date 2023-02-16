@@ -5,6 +5,7 @@ import android.view.View
 import androidx.core.view.accessibility.AccessibilityEventCompat.setAction
 
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -15,13 +16,14 @@ import com.example.newsapp.ui.ViewModel.NewsViewModel
 import com.example.newsapp.ui.activity.NewsActivity
 import com.example.newsapp.ui.adapters.NewsAdapter
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SavedNewsFragment:Fragment(R.layout.fragment_saved_news) {
-    lateinit var viewModel: NewsViewModel
+    private val viewModel:NewsViewModel by viewModels()
     lateinit var newsAdapter:NewsAdapter
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel =(activity as NewsActivity).viewModel
         setupRecyclerView()
         newsAdapter.setOnItemClickListener {
             val bundle = Bundle().apply {
