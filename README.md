@@ -32,7 +32,7 @@ To use NewsApp, follow these steps:
 
 This fragment lists the top headlines of the country.
 
-<img src="https://res.cloudinary.com/dixttklud/image/upload/v1674789651/NewsAppSS/Screenshot_20230126-110234_NewsApp_cdm34e.jpg" width="20%" height="20%">
+<img src="https://res.cloudinary.com/dixttklud/image/upload/v1691560135/WhatsApp_Image_2023-08-09_at_11.17.20_ll7x0e.jpg" width="20%" height="20%">
 
 #### Saved News Fragment 
 
@@ -50,7 +50,7 @@ This fragment shows the webView of the selected article.
 
 In this fragment, the user can search for news.
 
-<img src="https://res.cloudinary.com/dixttklud/image/upload/v1674789714/NewsAppSS/Screenshot_20230126-110349_NewsApp_xqvvvs.jpg" width="20%" height="20%">
+<img src="https://res.cloudinary.com/dixttklud/image/upload/v1691560144/WhatsApp_Image_2023-08-09_at_11.17.20_nof4jn.jpg" width="20%" height="20%">
 
 #### Installation
 To install NewsApp, follow these steps:
