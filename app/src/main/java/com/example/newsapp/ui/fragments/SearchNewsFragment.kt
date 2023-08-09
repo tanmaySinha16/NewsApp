@@ -58,9 +58,7 @@ class SearchNewsFragment:Fragment(R.layout.fragment_search_news) {
                         newsAdapter.differ.submitList(newsResponse.articles.toList())
                         val totalPages = newsResponse.totalResults / 20 + 2
                         isLastPage = viewModel.searchNewsPage ==totalPages
-                        if(isLastPage){
-                            requireView().findViewById<RecyclerView>(R.id.rvSearchNews).setPadding(0,0,0,0)
-                        }
+                       t
                     }
                 }
                 is Resource.Error -> {
@@ -124,6 +122,9 @@ class SearchNewsFragment:Fragment(R.layout.fragment_search_news) {
             {
                 viewModel.searchNews(requireView().findViewById<EditText>(R.id.etSearch).text.toString())
                 isScrolling=false
+            }
+            else {
+                requireView().findViewById<RecyclerView>(R.id.rvSearchNews).setPadding(0, 0, 0, 0)
             }
 
         }
