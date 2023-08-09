@@ -58,7 +58,7 @@ class SearchNewsFragment:Fragment(R.layout.fragment_search_news) {
                         newsAdapter.differ.submitList(newsResponse.articles.toList())
                         val totalPages = newsResponse.totalResults / 20 + 2
                         isLastPage = viewModel.searchNewsPage ==totalPages
-                       t
+
                     }
                 }
                 is Resource.Error -> {
