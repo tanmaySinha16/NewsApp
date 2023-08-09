@@ -48,6 +48,9 @@ class BreakingNewsFragment:Fragment(R.layout.fragment_breaking_news) {
                         newsAdapter.differ.submitList(newsResponse.articles.toList())
                         val totalPages = newsResponse.totalResults / 20 + 2
                         isLastPage = viewModel.breakingNewsPage ==totalPages
+                        if(isLastPage){
+                            requireView().findViewById<RecyclerView>(R.id.rvBreakingNews).setPadding(0,0,0,0)
+                        }
                     }
                 }
                 is Resource.Error -> {

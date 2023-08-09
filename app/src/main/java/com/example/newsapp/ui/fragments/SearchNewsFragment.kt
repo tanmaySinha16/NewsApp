@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AbsListView
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -43,20 +44,8 @@ class SearchNewsFragment:Fragment(R.layout.fragment_search_news) {
             )
         }
 
-
-        var job:Job?=null
-        requireView().findViewById<EditText>(R.id.etSearch).addTextChangedListener { editable ->
-            job?.cancel()
-            job = MainScope().launch {
-                delay(500L)
-
-                editable?.let {
-                    if(editable.toString().isNotEmpty())
-                    {
-                        viewModel.searchNews(editable.toString())
-                    }
-                }
-            }
+        requireView().findViewById<Button>(R.id.btnSearch).setOnClickListener {
+            viewModel.searchNews(requireView().findViewById<EditText>(R.id.etSearch).text.toString())
         }
 
         viewModel.searchNews.observe(viewLifecycleOwner, Observer { response ->
@@ -69,6 +58,9 @@ class SearchNewsFragment:Fragment(R.layout.fragment_search_news) {
                         newsAdapter.differ.submitList(newsResponse.articles.toList())
                         val totalPages = newsResponse.totalResults / 20 + 2
                         isLastPage = viewModel.searchNewsPage ==totalPages
+                        if(isLastPage){
+                            requireView().findViewById<RecyclerView>(R.id.rvSearchNews).setPadding(0,0,0,0)
+                        }
                     }
                 }
                 is Resource.Error -> {

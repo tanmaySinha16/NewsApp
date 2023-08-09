@@ -46,7 +46,7 @@ class NewsAdapter:RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
             findViewById<TextView>(R.id.tvSource).text = article.source?.name
             findViewById<TextView>(R.id.tvTitle).text = article.title
             findViewById<TextView>(R.id.tvDescription).text = article.description
-            findViewById<TextView>(R.id.tvPublishedAt).text = article.publishedAt
+            findViewById<TextView>(R.id.tvPublishedAt).text = article.publishedAt!!.subSequence(0,10)
 
             setOnClickListener {
                 onItemClickListener?.let { it(article) }
